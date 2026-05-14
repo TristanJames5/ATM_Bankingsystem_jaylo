@@ -1,0 +1,98 @@
+#include<iostream>
+using namespace std;
+
+    int password=2005;
+    int balance=0 ;
+
+    void balancecheck(){
+    	 cout << "Balance checked.\n";
+				      cout <<"Your current Balance is "<<"$"<<balance<<endl;
+				     
+    	
+	}
+
+
+  void withdrawal(){
+  	  int withdraw ;
+  	  
+    	cout << "Withdraw amount\n";
+        cin>>withdraw;
+        
+		if (balance>=withdraw){
+		 balance -= withdraw; 
+		 
+	cout<<"Successfully withdraw "<<"$"<<withdraw<<endl;
+		 }else{
+		cout<<"Not enough balance\n";
+		 }
+
+	}
+    
+     void deposiT(){
+     	  int deposit ;
+    	cout << "Deposits amount\n";
+    	cin>>deposit;
+                        balance += deposit;
+                          
+                          cout<<"You successfully deposit "<<"$"<<deposit<<endl;
+				              
+	}
+	     void changepin(){
+	     	   int newPin;
+     cout << "Enter new pin : ";
+                    cin >> newPin;
+                    password = newPin;
+                    cout << "PIN successfully changed!\n";
+                    
+	}
+	
+
+    
+
+       
+    int main(){
+    	string name;
+    	int pin;
+    	int choice ;
+    	
+    	cout<<"****Welcome to Axis Banking****\n"; 
+    cout <<"Enter your Account username :"<<endl;
+    cin>>name;
+    	
+    
+    cout <<"Enter your pin :"<<endl;
+    cin>>pin;
+    	
+	if (password==pin){
+	        	
+	        	do{
+	         cout << "***Please select a number*** \n";
+               cout <<"1.Check Balance \n";
+                 cout <<"2.Withdraw \n";
+                    cout <<"3.Deposit \n";
+                       cout <<"4.Change pin \n";
+			             cout <<"5.Exit \n";
+				cin >> choice;
+	        	
+	        	switch(choice){
+	        		
+	        		case 1: balancecheck();
+						break;
+					case 2: withdrawal();
+						break;
+					case 3: deposiT();
+						break;
+						
+	        		case 4:changepin ();
+						break;
+					
+
+	        		
+				}
+	        	
+			}while(choice != 5);
+          } else {
+         cout << "thank you !!!!!" << endl;  
+}
+			return 0;
+		}
